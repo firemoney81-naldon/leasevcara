@@ -1,23 +1,1161 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "스마트카 비교 견적 플랫폼 (AI 기반)",
+      "url": "https://yourdomain.com",
+      "description": "2026년 최신 아이오닉 유지비 정보와 함께, 합리적인 자동차리스 및 장기렌트카 비교 견적을 제공합니다. 다양한 차종별 가격, 장단점, 프로모션 정보를 확인하세요. Gemini, ChatGPT 기반 AI 분석.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://yourdomain.com/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      },
+      "keywords": "아이오닉 유지비, 자동차리스, 장기렌트카, 아이오닉 5, 아이오닉 6, 전기차 리스, 전기차 장기렌트, 자동차 견적 비교, 차량 가격, 프로모션, 할인, 2026년 트렌드, Gemini, ChatGPT, AI, 제미나이, 챗지피티, 평균, 얼마, 예상, 금액, 가격, 견적, 비용, 장점, 단점, 장단점, 차이점, 저렴한곳, 싼곳, 전문, 업체, 내돈내산, 후기, 가입, 순위, 비교, 추천, 할인, 디시, 신규, 혜택, 사은품, 현금지원, 지원금, 이벤트, 네이버, 구글, 유튜브, 트위터, 인스타그램, 페이스북",
+      "offers": {
+        "@type": "AggregateOffer",
+        "offerCount": "1000+",
+        "lowPrice": "200000",
+        "highPrice": "2000000",
+        "priceCurrency": "KRW",
+        "areaServed": "대한민국"
+      }
+    }
+    </script>
+    <style>
+        /* Design: Diverse and soft color schemes, clear visual hierarchy, improved readability */
+        :root {
+            --primary-color: #4A90E2; /* Soft Blue */
+            --secondary-color: #50E3C2; /* Soft Teal/Green */
+            --accent-color: #F5A623; /* Soft Orange/Gold */
+            --background-color: #F8F9FA; /* Light Gray Background */
+            --text-color: #333;
+            --light-text-color: #555;
+            --card-background: #FFFFFF;
+            --border-color: #E0E0E0;
+            --shadow: 0 5px 20px rgba(0,0,0,0.08);
+            --gradient-header: linear-gradient(135deg, #A1C4FD 0%, #C2E9FB 100%); /* Sky Blue Gradient */
+            --gradient-section-alt: linear-gradient(135deg, #E6F7FF 0%, #D6F0FC 100%); /* Lighter Sky Blue */
+            --hover-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            --input-focus-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3); /* Primary color focus */
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth; /* For smooth scrolling to sections */
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: var(--gradient-header);
+            color: white;
+            padding: 50px 20px 60px; /* Increased padding for impact */
+            text-align: center;
+            box-shadow: var(--shadow);
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+        }
+        header h1 {
+            margin-bottom: 15px;
+            font-size: 2.8em;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        header p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+        nav {
+            background-color: rgba(255, 255, 255, 0.25);
+            padding: 12px 0;
+            border-radius: 12px;
+            margin-top: 25px;
+            backdrop-filter: blur(5px); /* Frosted glass effect */
+            -webkit-backdrop-filter: blur(5px);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 18px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+            display: inline-block; /* For transform effect */
+        }
+        nav ul li a:hover, nav ul li a:focus {
+            background-color: white;
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        main {
+            padding: 50px 0;
+        }
+        section {
+            background-color: var(--card-background);
+            margin-bottom: 40px;
+            padding: 40px 45px; /* Slightly more padding */
+            border-radius: 18px; /* More rounded corners */
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+        section h2 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 35px;
+            font-size: 2.4em;
+            position: relative;
+            padding-bottom: 20px;
+            font-weight: 700;
+        }
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px; /* Wider underline */
+            height: 5px; /* Thicker underline */
+            background-color: var(--accent-color);
+            border-radius: 3px;
+        }
+        section h3 {
+            color: var(--primary-color);
+            margin-top: 35px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+        section p {
+            margin-bottom: 25px;
+            font-size: 1.15em;
+            color: var(--light-text-color);
+            text-align: justify; /* Justify text for better readability */
+        }
+        .section-alt {
+            background: var(--gradient-section-alt);
+        }
+        .form-group {
+            margin-bottom: 30px; /* More spacing between form groups */
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 700; /* Bolder labels */
+            color: var(--primary-color);
+            font-size: 1.15em;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="date"],
+        .form-group input[type="tel"],
+        .form-group input[type="number"],
+        .form-group select,
+        .form-group textarea {
+            width: calc(100% - 24px); /* Account for padding */
+            padding: 14px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px; /* More rounded inputs */
+            font-size: 1.05em;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: var(--input-focus-shadow);
+        }
+        .form-group input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2); /* Slightly larger checkboxes */
+            vertical-align: middle;
+            accent-color: var(--secondary-color); /* Style checkbox color */
+        }
+        .form-group label[for], .form-group input[type="checkbox"] + label {
+            cursor: pointer;
+        }
+        .form-group .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px; /* Spacing between checkboxes */
+        }
+        .form-group .checkbox-wrapper label {
+             margin-bottom: 0;
+             font-weight: 400; /* Lighter font for checkbox labels */
+             font-size: 1.05em;
+        }
+        .submit-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 16px 35px;
+            border: none;
+            border-radius: 10px; /* Rounded button */
+            font-size: 1.3em;
+            font-weight: 800; /* Extra bold */
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: var(--shadow);
+            display: inline-block;
+            letter-spacing: -0.5px;
+        }
+        .submit-btn:hover, .submit-btn:focus {
+            background-color: #40b8a4; /* Darker teal */
+            transform: translateY(-3px);
+            box-shadow: var(--hover-shadow);
+        }
+        .info-box {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 25px 30px;
+            border-radius: 12px;
+            margin-top: 35px;
+            font-size: 1.2em;
+            opacity: 0.92;
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.5); /* Subtle border */
+        }
+        .info-box strong {
+            font-weight: 800;
+        }
+        .keyword-tags {
+            text-align: center;
+            margin-top: 35px;
+        }
+        .keyword-tags a {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            margin: 6px;
+            border-radius: 25px; /* More rounded tags */
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 0.98em;
+            box-shadow: 0 2px 8px rgba(74, 144, 226, 0.4);
+        }
+        .keyword-tags a:hover, .keyword-tags a:focus {
+            background-color: #3a88d6; /* Darker blue */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.6);
+        }
+        table {
+            width: 100%;
+            border-collapse: separate; /* Use separate for border-radius on cells */
+            border-spacing: 0 10px; /* Add vertical spacing between rows */
+            margin-top: 30px;
+        }
+        th, td {
+            padding: 16px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        thead th {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1.15em;
+            border-radius: 10px 10px 0 0; /* Rounded top corners */
+            font-weight: 700;
+        }
+        tbody tr {
+            background-color: var(--card-background); /* Ensure rows have card background */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        tbody tr:hover {
+            background-color: rgba(74, 144, 226, 0.1); /* Subtle hover effect */
+            transform: translateY(-3px);
+        }
+        tbody td:first-child {
+             border-top-left-radius: 10px;
+             border-bottom-left-radius: 10px;
+        }
+        tbody td:last-child {
+             border-top-right-radius: 10px;
+             border-bottom-right-radius: 10px;
+        }
+        .figure-caption {
+            text-align: center;
+            font-style: italic;
+            color: var(--light-text-color);
+            margin-top: 20px;
+            font-size: 0.98em;
+        }
+        .related-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 12px;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+            font-size: 1.05em;
+        }
+        .related-links a:hover, .related-links a:focus {
+            color: #286cb5; /* Darker blue */
+            text-decoration: underline;
+        }
+        .long-content p {
+            font-size: 1.1em;
+            color: var(--light-text-color);
+            text-align: justify; /* Ensure justified text */
+            margin-bottom: 30px; /* More spacing between paragraphs */
+        }
+        .faq-dl dt {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 18px 25px;
+            margin-bottom: 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.2em;
+            position: relative;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: var(--shadow);
+        }
+        .faq-dl dt::after {
+            content: '+';
+            position: absolute;
+            right: 25px;
+            font-size: 1.6em;
+            transition: transform 0.3s ease;
+            line-height: 1; /* Ensure '+' is vertically centered */
+        }
+        .faq-dl dt.active {
+            background-color: #3A88D6; /* Darker blue */
+            transform: translateY(-2px);
+            box-shadow: var(--hover-shadow);
+        }
+        .faq-dl dt.active::after {
+            content: '-';
+            transform: rotate(0deg); /* No rotation needed for '-' */
+        }
+        .faq-dl dd {
+            background-color: var(--background-color);
+            padding: 25px;
+            border-radius: 10px;
+            margin-left: 0;
+            font-size: 1.1em;
+            color: var(--light-text-color);
+            border: 1px solid var(--border-color);
+            display: none;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.05); /* Inner shadow for depth */
+        }
+        .faq-dl dt.active + dd {
+            display: block;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--border-color), transparent); /* Gradient separator */
+            margin: 60px 0; /* Increased margin */
+        }
+        /* Specific styling for new content */
+        .car-model-highlight {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+        .car-model-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+            justify-content: center;
+        }
+        .car-model-list a {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 2px 8px rgba(74, 144, 226, 0.4);
+        }
+        .car-model-list a:hover, .car-model-list a:focus {
+            background-color: #3a88d6;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.6);
+        }
+        .form-group .input-group {
+            display: flex;
+            gap: 15px; /* Increased gap for grouped inputs */
+        }
+        .form-group .input-group select {
+            flex: 1; /* Equal width for select elements */
+        }
+        .form-group textarea {
+            min-height: 150px; /* Taller textareas */
+            resize: vertical;
+        }
+        .image-placeholder {
+            background-color: var(--border-color);
+            height: 250px;
+            border-radius: 10px;
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--light-text-color);
+            font-style: italic;
+            font-size: 1.1em;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.05);
+        }
+        .main-title-bold {
+            font-weight: 700;
+            color: white; /* Ensure it stands out on header background */
+            font-size: 1.4em;
+            margin-top: 0px;
+        }
+        .cta-button {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.4em;
+            font-weight: 900; /* Maximum bold */
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 6px 25px rgba(245, 166, 35, 0.5); /* Accent color shadow */
+            display: inline-block;
+            margin-top: 25px;
+            letter-spacing: -1px;
+        }
+        .cta-button:hover, .cta-button:focus {
+            background-color: #d99209; /* Darker accent */
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(245, 166, 35, 0.7);
+        }
+        .section-title-highlight {
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+        .ai-mention {
+            font-weight: bold;
+            color: #777; /* Slightly darker gray for AI mentions */
+        }
+        .text-highlight-primary {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .text-highlight-accent {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+        .text-highlight-secondary {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>2026년 최신 정보: 아이오닉 유지비, 자동차리스 & 장기렌트카 비교 견적</h1>
+            <p class="main-title-bold">현명한 선택을 위한 완벽 가이드 - 최고의 차량, 최적의 조건! AI 기반 분석으로 미래를 준비하세요.</p>
+            <nav aria-label="주요 메뉴">
+                <ul>
+                    <li><a href="#quote-request">맞춤 견적 요청</a></li>
+                    <li><a href="#price-comparison">가격 비교 분석</a></li>
+                    <li><a href="#trends-2026">2026년 시장 트렌드</a></li>
+                    <li><a href="#model-guide">차종별 상세 가이드</a></li>
+                    <li><a href="#faq">자주 묻는 질문</a></li>
+                    <li><a href="#contact">고객 센터</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <main>
-      <h1>Home page</h1>
+        <div class="container">
+            <section id="quote-request">
+                <h2>🚚 <strong>AI 기반</strong> 스마트 견적 요청 (무료)</h2>
+                <p>간단한 정보 입력으로 <strong>아이오닉 유지비</strong>부터 다양한 <strong>자동차리스</strong>, <strong>장기렌트카</strong> 옵션까지, 최대 5곳의 <strong>전문 업체</strong> 최저가 견적을 비교해 드립니다. 가장 합리적인 <strong>차량 가격</strong>과 <strong>월 비용</strong>을 지금 바로 확인하세요. <strong>Gemini</strong>와 <strong>ChatGPT</strong>가 분석한 최신 정보를 바탕으로 제공됩니다.</p>
+                
+                <form action="/submit-car-quote" method="POST">
+                    <div class="form-group">
+                        <label for="service-type">1. 이용 목적 선택 (필수)</label>
+                        <select id="service-type" name="service-type" required>
+                            <option value="">서비스 종류를 선택하세요</option>
+                            <option value="장기렌트카">장기렌트카 (신규, 월 20만원대부터)</option>
+                            <option value="자동차리스">자동차리스 (개인/법인)</option>
+                            <option value="아이오닉유지비문의">아이오닉 유지비/전기차 문의</option>
+                            <option value="기타">기타 문의 (차량 구매 상담 등)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="preferred-model">2. 희망 차종 선택 (필수)</label>
+                        <input type="text" id="preferred-model" name="preferred-model" placeholder="예: 현대 아이오닉 5, 기아 EV6, 제네시스 GV60, 테슬라 모델 3, BMW i4 등" required>
+                        <div class="car-model-list">
+                            <a href="#" onclick="document.getElementById('preferred-model').value='현대 아이오닉 5'; return false;">현대 아이오닉 5</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='현대 아이오닉 6'; return false;">현대 아이오닉 6</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='현대 아이오닉 7'; return false;">현대 아이오닉 7 (예상)</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='기아 EV6'; return false;">기아 EV6</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='기아 EV9'; return false;">기아 EV9</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='제네시스 GV60'; return false;">제네시스 GV60</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='제네시스 Electrified G80'; return false;">제네시스 G80 전동화</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='테슬라 모델 3'; return false;">테슬라 모델 3</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='테슬라 모델 Y'; return false;">테슬라 모델 Y</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='BMW i4'; return false;">BMW i4</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='BMW iX3'; return false;">BMW iX3</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='메르세데스-벤츠 EQE'; return false;">메르세데스 EQE</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='메르세데스-벤츠 EQA'; return false;">메르세데스 EQA</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='현대 코나 일렉트릭'; return false;">현대 코나 일렉트릭</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='기아 니로 플러스'; return false;">기아 니로 플러스</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='기아 쏘렌토 하이브리드'; return false;">기아 쏘렌토 하이브리드</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='현대 싼타페 하이브리드'; return false;">현대 싼타페 하이브리드</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='KG 모빌리티 토레스 EVX'; return false;">KG 모빌리티 토레스 EVX</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='르노코리아 XM3 E-TECH 하이브리드'; return false;">르노코리아 XM3 하이브리드</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='볼보 C40 Recharge'; return false;">볼보 C40 Recharge</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='폴스타 2'; return false;">폴스타 2</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='현대 아이오닉 5 N'; return false;">현대 아이오닉 5 N</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='기아 EV6 GT'; return false;">기아 EV6 GT</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='BMW i5'; return false;">BMW i5</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='아우디 Q4 e-tron'; return false;">아우디 Q4 e-tron</a>
+                            <a href="#" onclick="document.getElementById('preferred-model').value='현대 넥쏘'; return false;">현대 넥쏘 (수소차)</a>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>3. 희망 <strong>계약 기간</strong> 및 <strong>주행 거리</strong> (필수)</label>
+                        <div class="input-group">
+                            <select id="contract-term" name="contract-term" required aria-label="희망 계약 기간 선택">
+                                <option value="">계약 기간</option>
+                                <option value="12개월">12개월</option>
+                                <option value="24개월">24개월</option>
+                                <option value="36개월">36개월</option>
+                                <option value="48개월">48개월</option>
+                                <option value="60개월">60개월</option>
+                            </select>
+                            <select id="annual-mileage" name="annual-mileage" required aria-label="연 평균 주행거리 선택">
+                                <option value="">연 평균 주행거리</option>
+                                <option value="1만km">10,000 km</option>
+                                <option value="1.5만km">15,000 km</option>
+                                <option value="2만km">20,000 km</option>
+                                <option value="2.5만km">25,000 km</option>
+                                <option value="3만km">30,000 km</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-tel">4. 연락처 (필수)</label>
+                        <input type="tel" id="contact-tel" name="contact-tel" placeholder="010-xxxx-xxxx" required aria-label="연락처 입력">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="initial-payment">5. 초기 납입금 (선택)</label>
+                        <input type="number" id="initial-payment" name="initial-payment" placeholder="예: 0원 (무보증), 5,000,000원" min="0" aria-label="초기 납입금 입력 (선택 사항)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additional-notes">6. 추가 문의 사항 (선택)</label>
+                        <textarea id="additional-notes" name="additional-notes" placeholder="예: 아이오닉 5 유지비 궁금합니다. / 특정 할인 혜택 문의 / 법인 리스 조건 상담 / Gemini AI 기반 추천 요청 등" aria-label="추가 문의 사항 입력"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn" aria-label="무료 견적 비교 신청">지금 바로 무료 견적 신청하기</button>
+                </form>
+                <div class="info-box">
+                    <strong>💡 AI 스마트 비교 견적:</strong> 최신 시장 데이터와 <strong>AI 알고리즘</strong>을 기반으로 가장 정확하고 합리적인 <strong>견적</strong>을 제공합니다. <strong>Gemini</strong>와 <strong>ChatGPT</strong> 등 최신 AI 기술이 분석에 활용되어, <strong>2026년</strong> 최적의 선택을 돕습니다.
+                </div>
+            </section>
+            
+            <hr>
+
+            <section id="price-comparison" class="section-alt">
+                <h2>💰 <strong>자동차리스</strong> vs <strong>장기렌트카</strong> vs <strong>아이오닉 유지비</strong> 비교 분석</h2>
+                <p><strong>2026년</strong>, 자동차 구매 방식에 대한 고민이 깊어지고 있습니다. <strong>아이오닉</strong>과 같은 전기차의 <strong>유지비</strong>, 그리고 <strong>자동차리스</strong>와 <strong>장기렌트카</strong>의 장단점을 명확히 이해하는 것이 중요합니다. 저희 플랫폼은 정확한 <strong>가격 비교</strong>와 <strong>AI</strong> 분석을 통해 여러분의 현명한 선택을 돕습니다. **저렴한곳** 찾기, **프로모션** 확인, **할인** 정보까지 한눈에 비교하세요.</p>
+
+                <h3>📈 2026년 상반기 주요 모델 평균 월 납입료 비교 (예시)</h3>
+                <p class="figure-caption">※ 아래 표는 36개월 계약, 연 2만km 주행 기준이며, 옵션, 프로모션, 보험 요율 등에 따라 실제 <strong>견적</strong>은 달라질 수 있습니다. <strong>AI</strong> 분석을 통해 개인별 최적화된 <strong>견적</strong>을 받아보세요.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>차량 모델</th>
+                            <th>옵션</th>
+                            <th>구분</th>
+                            <th>월 평균 예상 비용 (KRW)</th>
+                            <th>주요 특징 & <strong>혜택</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>현대 아이오닉 5</td>
+                            <td>롱레인지 익스클루시브</td>
+                            <td>장기렌트카</td>
+                            <td>500,000 ~ 700,000</td>
+                            <td><strong>전기차</strong> 보조금 적용, 낮은 <strong>유지비</strong>, 취등록세 <strong>혜택</strong>, 보험/세금 포함</td>
+                        </tr>
+                        <tr>
+                            <td>현대 아이오닉 5</td>
+                            <td>롱레인지 익스클루시브</td>
+                            <td>자동차리스</td>
+                            <td>480,000 ~ 650,000</td>
+                            <td>차량가액 절감, <strong>세금 혜택</strong> (법인 유리), 재산세 미포함, <strong>아이오닉 유지비</strong> 절감</td>
+                        </tr>
+                        <tr>
+                            <td>기아 EV6</td>
+                            <td>롱레인지 어스</td>
+                            <td>장기렌트카</td>
+                            <td>520,000 ~ 720,000</td>
+                            <td>스포티한 디자인, 우수한 성능, 다양한 <strong>이벤트</strong>, <strong>현금지원</strong> 가능성</td>
+                        </tr>
+                        <tr>
+                            <td>제네시스 GV60</td>
+                            <td>스탠다드 후륜</td>
+                            <td>자동차리스</td>
+                            <td>600,000 ~ 800,000</td>
+                            <td>럭셔리 <strong>전기차</strong>, 높은 안전 사양, 프리미엄 브랜드, <strong>AI</strong> 기반 맞춤 <strong>견적</strong></td>
+                        </tr>
+                         <tr>
+                            <td>테슬라 모델 3</td>
+                            <td>RWD</td>
+                            <td>장기렌트카</td>
+                            <td>550,000 ~ 750,000</td>
+                            <td>최첨단 기술, 슈퍼차저 네트워크, <strong>아이오닉</strong> 대비 경쟁 모델, <strong>할인</strong> 프로모션</td>
+                        </tr>
+                         <tr>
+                            <td>BMW i4</td>
+                            <td>eDrive35</td>
+                            <td>자동차리스</td>
+                            <td>700,000 ~ 900,000</td>
+                            <td>독일 3사 <strong>전기차</strong>, 뛰어난 주행 성능, 혁신적 디자인, <strong>AI</strong> 최적화 <strong>리스</strong> 조건</td>
+                        </tr>
+                         <tr>
+                            <td>현대 아이오닉 6</td>
+                            <td>롱레인지 익스클루시브</td>
+                            <td>장기렌트카</td>
+                            <td>530,000 ~ 730,000</td>
+                            <td>뛰어난 공력 성능, 긴 주행 거리, <strong>아이오닉 유지비</strong> 절감 극대화</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>💡 <strong>아이오닉 유지비</strong> 및 <strong>전기차</strong>의 경제성</h3>
+                <p><strong>전기차</strong>, 특히 <strong>아이오닉 5</strong>와 <strong>아이오닉 6</strong>는 내연기관차 대비 <strong>유지비</strong>가 현저히 낮습니다. 평균적으로 유류비는 70% 이상 절감되며, 개별소비세, 취득세 감면 혜택과 함께 각종 공영주차장 및 통행료 할인 혜택까지 제공됩니다. **2026년**에도 이러한 친환경차 <strong>혜택</strong>은 지속될 것으로 예상되며, <strong>AI</strong>는 최신 정부 정책과 연계하여 실시간 **유지비** 절감 방안을 제시합니다. **ChatGPT** 기반의 차량 관리 시스템은 충전 스케줄링, 최적 경로 안내 등을 통해 <strong>아이오닉 유지비</strong>를 더욱 효율적으로 관리할 수 있도록 지원합니다. <strong>아이오닉 6</strong>의 경우, 뛰어난 공기역학 디자인으로 고속 주행 시에도 매우 효율적인 **전기차**입니다.</p>
+
+                <h3>✅ <strong>장기렌트카</strong> vs <strong>자동차리스</strong>: <strong>차이점</strong>과 <strong>장단점</strong></h3>
+                <p><strong>자동차리스</strong>와 <strong>장기렌트카</strong>는 차량을 '소유'하지 않고 '이용'하는 대표적인 방법입니다. 두 방식 모두 초기 목돈 부담을 줄이고, 매월 고정된 <strong>비용</strong>으로 차량을 이용할 수 있다는 공통점이 있지만, 세부적인 차이점을 이해하는 것이 중요합니다. **AI** 분석은 이러한 <strong>장단점</strong>을 명확히 비교하여 개인의 상황에 맞는 최적의 선택을 돕습니다.</p>
+                
+                <p><strong>자동차리스</strong>는 차량이 리스 이용자 명의로 등록되므로, 개인/법인 차량으로 취급됩니다. 이는 재산세에 합산되지 않는다는 장점이 있어, 특히 <strong>법인 차량</strong> 운영이나 자산 노출을 꺼리는 분들에게 유리합니다. 또한, 차량가액 절감 효과를 통해 실질적인 <strong>비용</strong> 부담을 줄일 수 있으며, **아이오닉**과 같은 고가 전기차 구매 시 <strong>세금 혜택</strong>을 극대화할 수 있습니다. 다만, 보험료, 자동차세, 소모품 교체 등은 이용자가 직접 관리해야 하며, 사고 시에는 개인/법인 보험으로 처리됩니다. **BMW i4**나 **제네시스 GV60**과 같은 고급 모델을 **리스**할 경우, <strong>AI</strong> 기반의 보험료 산출 시스템을 활용하면 더욱 합리적인 견적을 받을 수 있습니다. <strong>아이오닉 유지비</strong> 절감과 함께 **세금 혜택**을 중시한다면 **리스**가 좋은 선택입니다.</p>
+                
+                <p><strong>장기렌트카</strong>는 렌터카 회사 명의로 차량이 등록되며, <strong>월 렌트료</strong>에는 보통 보험료, 자동차세, 소모품 교체 비용 등이 포함되어 있어 관리가 매우 간편합니다. 사고 시에도 렌터카 회사 보험으로 처리되어 번거로움이 적습니다. **아이오닉 5**나 **기아 EV6** 같은 인기 **전기차**를 **장기렌트**할 경우, <strong>현금지원</strong>, **할인** 등 공격적인 **프로모션**이 많아 초기 <strong>비용</strong> 부담을 최소화할 수 있습니다. **2026년**에는 '무보증' 또는 '초저가 보증금' 상품이 더욱 확대될 것으로 예상됩니다. **ChatGPT**와 같은 <strong>AI</strong> 챗봇을 통해 24시간 상담이 가능하며, **YouTube** 등에서 많은 **내돈내산 후기**를 찾아볼 수 있습니다. **저렴한곳**을 찾기 위해선 여러 <strong>업체</strong>의 **견적**을 **비교**하는 것이 필수입니다. <strong>아이오닉 유지비</strong> 외에 관리 편의성을 고려한다면 <strong>장기렌트카</strong>가 유리할 수 있습니다.</p>
+
+                <p><strong>차이점</strong>을 요약하면 다음과 같습니다:</p>
+                <ul>
+                    <li><strong>명의:</strong> 리스(이용자), 렌트카(회사)</li>
+                    <li><strong>보험/세금:</strong> 리스(별도 처리), 렌트카(포함 옵션 많음)</li>
+                    <li><strong>번호판:</strong> 리스(일반), 렌트카(하/허/호)</li>
+                    <li><strong>자산 여부:</strong> 리스(개인/법인 자산), 렌트카(비자산)</li>
+                    <li><strong>주요 혜택:</strong> 리스(세금 절감, 재산세 영향 없음), 렌트카(관리 편의, 초기 비용 부담 적음, 다양한 프로모션)</li>
+                </ul>
+
+                <p><strong>싸고 좋은 차</strong>를 찾는 여정에서, <strong>AI</strong>는 귀하의 소득, 자산, 운전 습관, 선호도 등을 종합적으로 분석하여 가장 적합한 <strong>자동차리스</strong> 또는 <strong>장기렌트카</strong> 상품을 추천해 드립니다. **네이버**, **구글** 검색을 넘어선 깊이 있는 정보를 제공합니다.</p>
+            </section>
+            
+            <hr>
+            
+            <section id="trends-2026" class="section-alt">
+                <h2>🔮 <strong>2026년</strong> 자동차 시장 트렌드 및 스마트 구매 전략</h2>
+                <p><strong>2026년</strong> 자동차 시장은 전기차 전환 가속화, 개인화된 서비스 증가, 그리고 <strong>AI</strong> 기술의 접목이 더욱 두드러질 전망입니다. <strong>아이오닉 유지비</strong>와 같은 전기차 관련 정보의 중요성이 커지고 있으며, <strong>자동차리스</strong>와 <strong>장기렌트카</strong> 시장 역시 더욱 정교해질 것입니다. **Gemini**와 같은 **AI**는 이러한 트렌드를 분석하는 데 중요한 역할을 할 것입니다. **ChatGPT**는 실시간 상담을 통해 고객의 궁금증을 해소해 줄 것입니다.</p>
+
+                <h3>1. <strong>전기차</strong> 대중화와 <strong>아이오닉</strong> 시리즈의 위상 강화</h3>
+                <p><strong>아이오닉 5</strong>와 <strong>아이오닉 6</strong>는 이미 국내 전기차 시장에서 강력한 입지를 구축했으며, <strong>2026년</strong>에는 더욱 다양한 파생 모델과 개선된 배터리 기술이 적용될 것으로 예상됩니다. **현대 아이오닉 7**과 같은 신규 모델의 등장 가능성도 있어, **전기차 장기렌트** 및 **리스** 시장의 경쟁이 더욱 치열해질 것입니다. <strong>아이오닉 유지비</strong> 절감 팁에 대한 관심도 더욱 높아질 것입니다. <strong>테슬라 모델 3</strong>, **테슬라 모델 Y**와 같은 경쟁 모델들도 꾸준한 인기를 누릴 것으로 보입니다.</p>
+                
+                <h3>2. AI 기반 개인 맞춤형 추천 시스템 고도화</h3>
+                <p>단순한 가격 비교를 넘어, 소비자의 운전 습관, 라이프스타일, 예산, 선호하는 브랜드 및 모델 (예: **BMW i4**, **제네시스 GV60** 등)을 종합적으로 분석하여 최적의 **자동차리스** 또는 **장기렌트카** 상품을 추천하는 AI 시스템이 더욱 발전할 것입니다. **ChatGPT**와 같은 대화형 AI를 통해 실시간으로 상담하고 정보를 얻는 방식이 보편화될 것입니다. **AI**는 **견적** 비교뿐만 아니라, **장기렌트카 현금지원**이나 **자동차리스 할인**과 같은 <strong>혜택</strong> 정보도 개인 맞춤형으로 제공할 것입니다.</p>
+
+                <h3>3. '구독형' 서비스 및 유연한 계약 조건 확대</h3>
+                <p>차량 소유에 대한 인식이 변화하면서, 월 고정 비용으로 차량 이용 및 관리 서비스를 모두 누릴 수 있는 '구독형' 모델이 더욱 확대될 전망입니다. 이는 **장기렌트카**의 장점을 더욱 강화하며, 단기적인 **이벤트**나 **할인** 프로모션도 다양하게 등장할 것입니다. **YouTube**나 **Instagram** 등 소셜 미디어를 통해 이러한 새로운 서비스들이 활발하게 홍보될 것입니다. **새로운 가입 혜택**이나 **사은품** 정보도 빠르게 확산될 것입니다.</p>
+                
+                <h3>4. <strong>아이오닉 유지비</strong> 절감 및 전기차 생태계 확장</h3>
+                <p><strong>2026년</strong>에는 **아이오닉**과 같은 **전기차**의 <strong>유지비</strong>를 더욱 절감할 수 있는 다양한 서비스와 기술이 등장할 것입니다. 스마트 충전 솔루션, V2G(Vehicle-to-Grid) 기술 상용화, 중고 **전기차** 배터리 재활용 및 활용 방안 등이 구체화되면서 **전기차**의 경제성은 더욱 높아질 것입니다. **KG 모빌리티 토레스 EVX**와 같은 신규 **전기차** 모델들도 이러한 트렌드를 이끌 것입니다.</p>
+                
+                <h3>📈 2026년 성공적인 차량 계약을 위한 체크리스트</h3>
+                <form action="/submit-checklist" method="POST">
+                    <div class="form-group">
+                        <label>차량 계약 전 필수 점검 사항 (2026년 최신 버전)</label>
+                        <div style="background-color: var(--background-color); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="check1" name="checklist" value="AI견적비교">
+                                <label for="check1">1. <strong>AI 기반</strong>으로 3곳 이상 **자동차리스/장기렌트카** **견적** 비교 완료 (<strong>Gemini</strong>, **ChatGPT** 활용)</label>
+                            </div>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="check2" name="checklist" value="아이오닉유지비확인">
+                                <label for="check2">2. 희망 모델(**아이오닉** 등)의 <strong>유지비</strong>, 보험료, 세금 등 총 <strong>비용</strong> 확인</label>
+                            </div>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="check3" name="checklist" value="계약서꼼꼼확인">
+                                <label for="check3">3. 계약서 상의 <strong>월 비용</strong>, <strong>계약 기간</strong>, <strong>주행 거리</strong>, 위약금 조건 명확히 확인</label>
+                            </div>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="check4" name="checklist" value="프로모션확인">
+                                <label for="check4">4. 현재 진행 중인 **할인**, **혜택**, **현금지원**, **사은품** 등 프로모션 조건 확인</label>
+                            </div>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="check5" name="checklist" value="제휴카드확인">
+                                <label for="check5">5. 제휴 카드 할인, 추가 **이벤트** 등 숨겨진 <strong>혜택</strong> 파악</label>
+                            </div>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="check6" name="checklist" value="전문업체선택">
+                                <label for="check6">6. <strong>저렴한곳</strong> 및 신뢰도 높은 <strong>전문 업체</strong> 선정 (<strong>내돈내산 후기</strong> 참고, <strong>AI</strong> 추천 활용)</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="checklist-note">추가적인 차량 구매/이용 관련 문의</label>
+                        <textarea id="checklist-note" name="checklist-note" placeholder="예: 전기차 충전 인프라 관련 문의 / 법인 차량 구매 시 세금 혜택 상담 / 아이오닉 5 vs EV6 유지비 비교 요청" aria-label="체크리스트 관련 추가 문의"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" style="background-color: var(--primary-color); color: white;" aria-label="체크리스트 상태 저장">나의 차량 계약 준비 상태 저장</button>
+                </form>
+            </section>
+            
+            <hr>
+            
+            <section id="model-guide">
+                <h2>✅ <strong>아이오닉</strong> & 인기 차종별 상세 가이드 및 <strong>업체 추천</strong></h2>
+                <p>다양한 <strong>아이오닉</strong> 모델부터 인기 있는 <strong>자동차리스</strong> 및 <strong>장기렌트카</strong> 대상 차종까지, 각 모델별 특징과 <strong>유지비</strong>, 그리고 최적의 <strong>업체</strong> 선정 기준을 제시합니다. <strong>AI</strong>는 여러분의 운전 스타일에 맞는 최적의 차량을 추천하는 데 도움을 줄 것입니다. **2026년** 최신 모델 정보와 함께 <strong>평균 비용</strong>, <strong>가격</strong>, <strong>견적</strong> 정보를 제공합니다.</p>
+
+                <h3>🌟 <strong>아이오닉 5 & 아이오닉 6</strong> 완벽 분석</h3>
+                <p>현대자동차의 <strong>아이오닉</strong> 라인업, 특히 **아이오닉 5**와 **아이오닉 6**는 국내외 시장에서 전기차의 새로운 지평을 열었습니다. 독창적인 디자인 언어와 E-GMP 플랫폼 기반의 뛰어난 성능은 물론, 무엇보다 중요한 것은 <strong>아이오닉 유지비</strong>의 경쟁력입니다. 내연기관차 대비 월등히 적은 충전 비용, 각종 세금 감면 혜택(개별소비세, 취득세 등), 그리고 유지보수 주기 연장 및 부품 가짓수 감소로 인한 관리 비용 절감 효과는 **아이오닉**을 매력적인 선택지로 만듭니다. <strong>아이오닉 5 유지비</strong>는 평균적으로 월 10만원 내외의 충전 비용과 낮은 부대 비용으로 구성되어, 연간 수백만원의 <strong>비용</strong> 절감 효과를 기대할 수 있습니다. <strong>아이오닉 6</strong>는 뛰어난 공기역학 성능으로 고속 주행 시에도 효율적인 <strong>유지비</strong>를 자랑합니다. **2026년**에는 더욱 향상된 배터리 성능과 스마트 기능을 탑재한 모델들이 기대됩니다. <strong>자동차리스</strong> 및 <strong>장기렌트카</strong> 모두 **아이오닉** 모델에 대한 수요가 높습니다. **현대 아이오닉 5 가격**, **현대 아이오닉 6 가격**을 비교해 보세요. <strong>아이오닉 5 N</strong>, **아이오닉 6 N**과 같은 고성능 모델의 <strong>견적</strong> 문의도 증가하고 있습니다.</p>
+                
+                <h3>🚗 2026년 인기 <strong>자동차리스/장기렌트카</strong> 추천 모델 (30개 이상)</h3>
+                <p>저희 플랫폼은 신뢰할 수 있는 <strong>전문 업체</strong>들과 협력하여 최신 <strong>할인</strong> 및 <strong>프로모션</strong> 정보를 제공합니다. <strong>저렴한곳</strong>을 찾는 여러분을 위해 다음과 같은 인기 모델들의 <strong>견적</strong>을 비교해 드립니다. **AI**는 각 모델의 **장점**과 **단점**을 분석하여 최적의 선택을 돕습니다.</p>
+                <div class="car-model-list">
+                    <a href="#">현대 아이오닉 5</a>
+                    <a href="#">현대 아이오닉 6</a>
+                    <a href="#">현대 아이오닉 7 (예상)</a>
+                    <a href="#">기아 EV6</a>
+                    <a href="#">기아 EV9</a>
+                    <a href="#">기아 니로 플러스</a>
+                    <a href="#">기아 쏘렌토 하이브리드</a>
+                    <a href="#">제네시스 GV60</a>
+                    <a href="#">제네시스 Electrified G80</a>
+                    <a href="#">테슬라 모델 3</a>
+                    <a href="#">테슬라 모델 Y</a>
+                    <a href="#">BMW i4</a>
+                    <a href="#">BMW iX3</a>
+                    <a href="#">BMW i5</a>
+                    <a href="#">메르세데스-벤츠 EQE</a>
+                    <a href="#">메르세데스-벤츠 EQA</a>
+                    <a href="#">현대 코나 일렉트릭</a>
+                    <a href="#">현대 싼타페 하이브리드</a>
+                    <a href="#">KG 모빌리티 토레스 EVX</a>
+                    <a href="#">르노코리아 XM3 E-TECH 하이브리드</a>
+                    <a href="#">볼보 C40 Recharge</a>
+                    <a href="#">폴스타 2</a>
+                    <a href="#">아우디 Q4 e-tron</a>
+                    <a href="#">현대 넥쏘 (수소차)</a>
+                    <a href="#">기아 레이 EV</a>
+                    <a href="#">현대 포터 2 일렉트릭</a>
+                    <a href="#">기아 봉고 EV</a>
+                    <a href="#">BMW i7</a>
+                    <a href="#">메르세데스-벤츠 EQS SUV</a>
+                    <a href="#">렉서스 RZ 450e</a>
+                    <a href="#">재규어 I-PACE</a>
+                </div>
+                
+                <h3>✅ 신뢰할 수 있는 <strong>자동차리스/장기렌트카 업체</strong> 선정 가이드</h3>
+                <p>수많은 <strong>업체</strong> 중에서 신뢰할 수 있는 곳을 선택하는 것은 합리적인 <strong>비용</strong>과 만족스러운 이용 경험을 좌우합니다. 저희 플랫폼은 검증된 <strong>전문 업체</strong>만을 연결하며, 고객님 스스로 좋은 <strong>업체</strong>를 고를 수 있는 기준을 제시합니다. **AI**는 이러한 기준을 바탕으로 <strong>추천</strong> 리스트를 제공합니다.</p>
+                <ul>
+                    <li><strong>정식 사업자 등록 및 허가 여부:</strong> 반드시 관할 기관에 정식으로 등록된 <strong>전문 업체</strong>인지 확인해야 합니다. (<strong>정부24</strong> 등 공신력 있는 사이트에서 확인 가능)</li>
+                    <li><strong>투명한 계약 조건:</strong> <strong>월 비용</strong>, **계약 기간**, **주행 거리**, 추가 **비용** 발생 조건(위약금, 수리비 등)이 명확히 명시된 표준 계약서를 작성하는지 확인합니다. <strong>AI</strong>는 계약서 검토 도움을 줄 수 있습니다.</li>
+                    <li><strong>고객 후기 및 평점:</strong> **네이버**, **YouTube**, **Twitter**, **Instagram** 등 다양한 채널의 실제 고객 <strong>후기</strong> 및 평점을 반드시 확인하여 서비스 품질을 평가해야 합니다. <strong>내돈내산</strong> 후기는 특히 신뢰도가 높습니다.</li>
+                    <li><strong>다양한 프로모션 제공:</strong> <strong>할인</strong>, **현금지원**, **사은품**, **상품권** 등 고객에게 실질적인 <strong>혜택</strong>을 제공하는 **이벤트**를 진행하는지 확인합니다. <strong>신규 가입 혜택</strong> 정보도 중요합니다.</li>
+                    <li><strong>AI 기반 상담 시스템:</strong> **Gemini**, **ChatGPT**와 같은 **AI** 기술을 활용하여 빠르고 정확한 상담을 제공하는 <strong>업체</strong>는 고객 편의성이 높으며, <strong>2026년</strong> 트렌드를 반영한 서비스입니다.</li>
+                </ul>
+                
+                <h3 id="regional-comparison">📍 지역별 <strong>자동차리스/장기렌트카</strong> 비교 및 <strong>저렴한곳</strong> 찾기</h3>
+                <p>전국 주요 지역의 **자동차리스** 및 **장기렌트카** 시장은 각기 다른 특성을 가집니다. **서울**, **경기** 지역은 경쟁이 치열하여 다양한 <strong>프로모션</strong>이 많지만, **부산**, **인천** 등 항만 도시에서는 물류 관련 특수 차량 리스/렌트 옵션이 강점일 수 있습니다. **AI**는 귀하의 거주 지역과 주행 패턴을 분석하여 최적의 지역별 **견적**을 추천해 드립니다.</p>
+                
+                <form action="/search-regional-options" method="GET">
+                    <div class="form-group">
+                        <label for="region-select">원하는 지역을 선택해 주세요.</label>
+                        <select id="region-select" name="region" onchange="updateRegionalInfo(this.value)" aria-label="희망 지역 선택">
+                            <option value="전국">전국 (종합)</option>
+                            <option value="서울">서울 (강남, 서초, 송파)</option>
+                            <option value="경기">경기 (수원, 성남, 용인)</option>
+                            <option value="부산">부산 (해운대, 연제)</option>
+                            <option value="인천">인천 (연수, 송도)</option>
+                            <option value="대구">대구 (수성, 달서)</option>
+                            <option value="광주">광주 (서구, 북구)</option>
+                            <option value="대전">대전 (서구, 유성)</option>
+                            <option value="울산">울산 (남구, 북구)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="info-box" id="regional-info-box">
+                        <strong>선택된 지역 정보:</strong> 지역을 선택하시면 해당 지역의 **자동차리스/장기렌트카** 시장 특징과 주요 **업체**, 그리고 **할인** 정보를 안내해 드립니다. (예: **서울** 지역은 **전기차 리스** 수요가 높아 다양한 **프로모션**이 진행 중입니다.)
+                    </div>
+                    
+                    <script>
+                        function updateRegionalInfo(region) {
+                            const infoBox = document.getElementById('regional-info-box');
+                            let infoText = '';
+                            let regionalHighlight = '';
+
+                            switch(region) {
+                                case '서울':
+                                    regionalHighlight = '<strong>서울 (강남, 서초, 송파)</strong>';
+                                    infoText = '<strong>자동차리스</strong> 및 <strong>장기렌트카</strong> 시장 경쟁이 가장 치열하며, **아이오닉** 등 **전기차**에 대한 **할인** 및 **이벤트**가 풍부합니다. **AI 기반** 상담이 활발한 지역입니다. **월 평균 비용**은 전국 평균 대비 약간 높을 수 있습니다. **신규 가입 혜택**도 주목할 만합니다.';
+                                    break;
+                                case '경기':
+                                    regionalHighlight = '<strong>경기 (수원, 성남, 용인)</strong>';
+                                    infoText = '수도권 인접 지역으로 신도시 중심의 **장기렌트카** 수요가 높습니다. **현대, 기아** 등 국산차 **견적** 비교가 용이하며, **아이오닉 유지비** 절감 팁이 인기입니다. **저렴한곳**을 찾기 위한 **AI** 분석이 활발합니다.';
+                                    break;
+                                case '부산':
+                                    regionalHighlight = '<strong>부산 (해운대, 연제)</strong>';
+                                    infoText = '항만 물류 관련 **상용차 리스** 및 **SUV 장기렌트** 수요가 높습니다. **아이오닉 5** 등 **전기차**에 대한 관심도 증가 추세이며, **부산** 지역 **할인** 정보를 잘 찾아보는 것이 중요합니다. **YouTube 후기**도 참고하세요.';
+                                    break;
+                                case '인천':
+                                    regionalHighlight = '<strong>인천 (연수, 송도)</strong>';
+                                    infoText = '신축 아파트 및 국제도시 중심으로 **패밀리카** 및 **전기차 리스** 문의가 많습니다. **장기렌트카** **프로모션**과 함께 **저렴한곳**을 찾기 용이합니다. **AI**는 **인천** 지역 특화 **혜택**을 찾아줍니다.';
+                                    break;
+                                case '대구':
+                                    regionalHighlight = '<strong>대구 (수성, 달서)</strong>';
+                                    infoText = '<strong>내돈내산 후기</strong>가 활발한 지역 중 하나이며, 중형 세단 및 SUV **장기렌트카** 수요가 꾸준합니다. **아이오닉** 등 **전기차** 관련 **견적**도 많이 문의되고 있습니다. **가격 비교**에 유리합니다.';
+                                    break;
+                                case '광주':
+                                    regionalHighlight = '<strong>광주 (서구, 북구)</strong>';
+                                    infoText = '지역 경제 활성화에 따라 **법인 차량 리스** 및 **개인 장기렌트카** 수요가 증가하고 있습니다. **기아** 등 지역 기반 브랜드와의 연계 프로모션이 있을 수 있습니다. **AI**는 **광주** 맞춤 **이벤트** 정보를 제공합니다.';
+                                    break;
+                                case '대전':
+                                    regionalHighlight = '<strong>대전 (서구, 유성)</strong>';
+                                    infoText = '연구 단지 및 과학 단지가 많아 **첨단 기술** 관련 **전기차** 및 **친환경차** **리스/렌트** 문의가 많습니다. **아이오닉 6**와 같은 모델의 **유지비** 절감 효과가 강조됩니다. **AI**는 기술 동향 기반 **추천**을 제공합니다.';
+                                    break;
+                                case '울산':
+                                    regionalHighlight = '<strong>울산 (남구, 북구)</strong>';
+                                    infoText = '산업 단지가 발달하여 **상용차 리스** 및 **SUV 장기렌트** 수요가 높습니다. **전기차** 전환 흐름에 따라 **아이오닉** 등 **전기차** 모델의 **견적** 문의도 증가하고 있습니다. **울산** 지역 **업체** 정보와 **할인**을 비교 제공합니다.';
+                                    break;
+                                default: // 전국
+                                    regionalHighlight = '<strong>전국</strong>';
+                                    infoText = '지역에 구애받지 않고 최적의 **자동차리스** 및 **장기렌트카** **견적**을 비교해 드립니다. **AI** 분석을 통해 맞춤형 **혜택** 정보를 제공하며, <strong>2026년</strong> 최신 **트렌드**를 반영합니다.';
+                            }
+                            infoBox.innerHTML = `<strong>${regionalHighlight} 지역 정보:</strong> ${infoText}`;
+                        }
+                    </script>
+                </form>
+                
+                <h3>🔗 신뢰할 수 있는 차량/금융 정보 관련 사이트</h3>
+                <div class="related-links">
+                    <a href="https://namu.wiki/w/%EC%A0%95%EB%B3%B4%EC%84%9C%EB%B9%84%EC%8A%A4" target="_blank" rel="nofollow noopener">차량 관련 정보 (나무위키)</a>
+                    <a href="https://www.nts.go.kr/tax/its/IH/IH020201.do" target="_blank" rel="nofollow noopener">국세청 - 법인차 리스/렌트 세금 혜택</a>
+                    <a href="https://www.ftc.go.kr/www/main.do" target="_blank" rel="nofollow noopener">공정거래위원회 - 소비자 보호</a>
+                    <a href="https://www.kama.or.kr/home/main.do" target="_blank" rel="nofollow noopener">한국자동차산업협회 (KAMA)</a>
+                    <a href="https://www.koreatire.com/kr/service/knowledge/car-maintenance-cost-guide" target="_blank" rel="nofollow noopener">한국타이어 - 차량 유지비 가이드</a>
+                    <a href="https://www.gov.kr/main" target="_blank" rel="nofollow noopener">정부24 - 생활정보</a>
+                    <a href="https://www.motie.go.kr/mtr/energy/etc/renewEnergy/renewEnergy.do" target="_blank" rel="nofollow noopener">산업통상자원부 - 신재생에너지 정책 (전기차 관련)</a>
+                </div>
+            </section>
+            
+            <hr>
+
+            <section id="long-info" class="section-alt">
+                <h2>📚 20,000자 정보성 텍스트: <strong>아이오닉 유지비</strong>, <strong>자동차리스</strong>, <strong>장기렌트카</strong> 심층 분석</h2>
+                <div class="long-content">
+                    <p><strong>2026년</strong>, 자동차 시장은 단순한 소유 개념을 넘어 '이용'과 '경험' 중심으로 빠르게 재편되고 있습니다. 특히 <strong>아이오닉</strong>과 같은 혁신적인 전기차의 등장은 <strong>유지비</strong>, 성능, 그리고 구매 방식에 대한 새로운 기준을 제시하고 있습니다. 본문에서는 <strong>아이오닉 유지비</strong>에 대한 상세 분석을 시작으로, <strong>자동차리스</strong>와 <strong>장기렌트카</strong>라는 두 가지 주요 이용 방식의 복잡한 세계를 깊이 탐구하며, <strong>2026년</strong> 최신 시장 트렌드와 <strong>AI</strong> 기반의 스마트한 선택 전략을 제시합니다. **Gemini**와 **ChatGPT** 같은 최첨단 <strong>AI</strong> 기술은 이 모든 과정을 더욱 쉽고 효율적으로 만들어 줄 것입니다. **AI**는 단순한 정보 제공을 넘어, 개인 맞춤형 <strong>견적</strong>과 <strong>추천</strong>을 통해 최적의 차량 이용 경험을 지원합니다.</p>
+
+                    <h3>🌐 <strong>아이오닉</strong> 시리즈: 미래지향적 디자인과 경제적인 <strong>유지비</strong>의 조화</h3>
+                    <p>**아이오닉** 라인업, 특히 **아이오닉 5**와 **아이오닉 6**는 국내외 시장에서 전기차의 새로운 지평을 열었습니다. 독창적인 디자인 언어와 E-GMP 플랫폼 기반의 뛰어난 성능은 물론, 무엇보다 중요한 것은 **아이오닉 유지비**의 경쟁력입니다. 내연기관차 대비 월등히 적은 충전 비용(평균 70% 이상 절감), 개별소비세, 취득세 감면 혜택, 그리고 유지보수 주기 연장 및 부품 가짓수 감소로 인한 관리 비용 절감 효과는 **아이오닉**을 매우 매력적인 선택지로 만듭니다. **아이오닉 5 유지비**는 평균적으로 월 10만원 내외의 충전 비용과 낮은 부대 비용으로 구성되어, 연간 수백만원의 **비용** 절감 효과를 기대할 수 있습니다. **아이오닉 6**는 뛰어난 공기역학 성능으로 고속 주행 시에도 효율적인 **유지비**를 자랑합니다. **2026년**에는 배터리 기술의 발전으로 주행 거리가 더욱 늘어나고 충전 속도가 빨라지면서, **아이오닉** 모델들의 경제성은 더욱 강화될 것입니다. **AI**는 이러한 **유지비** 데이터를 실시간으로 분석하여 사용자에게 최적화된 정보를 제공할 뿐만 아니라, **아이오닉 5 N**이나 **아이오닉 6 N**과 같은 고성능 모델의 특성을 고려한 맞춤형 <strong>유지비</strong> 예측 정보도 제공합니다.</p>
+
+                    <h3>🚗 <strong>자동차리스</strong> vs <strong>장기렌트카</strong>: 당신에게 맞는 선택은? (<strong>차이점</strong> 및 <strong>장단점</strong> 심층 비교)</h3>
+                    <p><strong>자동차리스</strong>와 <strong>장기렌트카</strong>는 차량을 '소유'하는 대신 '이용'하는 현대적인 방식입니다. 두 방식 모두 초기 목돈 부담을 줄이고, 매월 고정된 **비용**으로 차량을 이용할 수 있다는 공통점이 있지만, 세부적인 차이점을 이해하는 것이 중요합니다. **AI** 분석은 이러한 **장단점**을 명확히 비교하여 개인의 상황에 맞는 최적의 선택을 돕습니다. **2026년**에는 더욱 다양한 상품이 출시될 예정이며, **AI**는 이를 종합적으로 분석하여 사용자에게 최적의 솔루션을 제안할 것입니다.</p>
+                    
+                    <p><strong>자동차리스</strong>는 차량이 리스 이용자 명의로 등록되므로, 개인/법인 차량으로 취급됩니다. 이는 재산세에 합산되지 않는다는 장점이 있어, 특히 **법인 차량** 운영이나 자산 노출을 꺼리는 분들에게 유리합니다. 또한, 차량가액 절감 효과를 통해 실질적인 **비용** 부담을 줄일 수 있으며, **아이오닉**과 같은 고가 전기차 구매 시 **세금 혜택**을 극대화할 수 있습니다. **BMW i4**나 **제네시스 GV60**과 같은 고급 모델을 **리스**할 경우, <strong>AI</strong> 기반의 보험료 산출 시스템을 활용하면 더욱 합리적인 견적을 받을 수 있습니다. <strong>아이오닉 유지비</strong> 절감과 함께 **세금 혜택**을 중시한다면 **리스**가 좋은 선택입니다. **BMW i5**, **메르세데스 EQE** 등 신규 <strong>전기차</strong> 모델들도 **리스** 시장에서 큰 인기를 얻을 것으로 예상됩니다. **2026년**에는 **법인** 대상 특화 **리스** 상품도 더욱 다양해질 것입니다.</p>
+                    
+                    <p><strong>장기렌트카</strong>는 렌터카 회사 명의로 차량이 등록되며, <strong>월 렌트료</strong>에는 보통 보험료, 자동차세, 소모품 교체 비용 등이 포함되어 있어 관리가 매우 간편합니다. 사고 시에도 렌터카 회사 보험으로 처리되어 번거로움이 적습니다. **아이오닉 5**나 **기아 EV6** 같은 인기 **전기차**를 **장기렌트**할 경우, <strong>현금지원</strong>, **할인** 등 공격적인 **프로모션**이 많아 초기 <strong>비용</strong> 부담을 최소화할 수 있습니다. **2026년**에는 '무보증' 또는 '초저가 보증금' 상품이 더욱 확대될 것으로 예상됩니다. **ChatGPT**와 같은 <strong>AI</strong> 챗봇을 통해 24시간 상담이 가능하며, **YouTube** 등에서 많은 **내돈내산 후기**를 찾아볼 수 있습니다. **저렴한곳**을 찾기 위해선 여러 <strong>업체</strong>의 **견적**을 **비교**하는 것이 필수입니다. <strong>아이오닉 유지비</strong> 외에 관리 편의성을 고려한다면 <strong>장기렌트카</strong>가 유리할 수 있습니다. **기아 니로 플러스**, **현대 코나 일렉트릭** 등 소형 **전기차**의 <strong>장기렌트</strong> 문의도 꾸준합니다.</p>
+
+                    <p><strong>차이점</strong>을 요약하면 다음과 같습니다:</p>
+                    <ul>
+                        <li><strong>명의:</strong> 리스(이용자), 렌트카(회사)</li>
+                        <li><strong>보험/세금:</strong> 리스(별도 처리), 렌트카(포함 옵션 많음)</li>
+                        <li><strong>번호판:</strong> 리스(일반), 렌트카(하/허/호)</li>
+                        <li><strong>자산 여부:</strong> 리스(개인/법인 자산), 렌트카(비자산)</li>
+                        <li><strong>주요 혜택:</strong> 리스(세금 절감, 재산세 영향 없음), 렌트카(관리 편의, 초기 비용 부담 적음, 다양한 프로모션)</li>
+                    </ul>
+
+                    <p><strong>싸고 좋은 차</strong>를 찾는 여정에서, **AI**는 귀하의 소득, 자산, 운전 습관, 선호도 등을 종합적으로 분석하여 가장 적합한 **자동차리스** 또는 **장기렌트카** 상품을 추천해 드립니다. **네이버**, **구글** 검색을 넘어선 깊이 있는 정보를 제공하며, **AI**는 **2026년** 트렌드를 반영한 최신 <strong>혜택</strong>과 **할인** 정보를 실시간으로 업데이트합니다.</p>
+
+                    <h3>📈 <strong>2026년</strong> 자동차 시장 트렌드 및 스마트 구매 전략</h3>
+                    <p><strong>2026년</strong> 자동차 시장은 몇 가지 뚜렷한 트렌드를 보일 것입니다. 첫째, **전기차** 전환은 더욱 가속화될 것입니다. **아이오닉** 시리즈를 필두로 한 다양한 **전기차** 모델들이 출시되며, 충전 인프라 역시 확충될 전망입니다. **현대 넥쏘**와 같은 수소차, **기아 쏘렌토 하이브리드** 등 친환경 하이브리드 모델에 대한 관심도 꾸준합니다. 둘째, **AI** 기술의 접목이 더욱 심화될 것입니다. **Gemini**와 같은 **AI**는 차량 추천, 맞춤형 금융 상품 제안, 실시간 **유지비** 관리 등에서 핵심적인 역할을 수행할 것입니다. **ChatGPT**와 같은 대화형 AI는 고객 상담의 효율성을 극대화할 것입니다. 셋째, '소유'에서 '이용'으로의 패러다임 전환이 가속화되어, **자동차리스**와 **장기렌트카** 시장은 더욱 성장할 것입니다. 특히, 유연한 계약 조건과 맞춤형 서비스를 제공하는 '구독형' 모델이 주목받을 것입니다. **YouTube**, **트위터**, **인스타그램** 등 소셜 미디어 채널을 통한 홍보와 정보 공유가 더욱 활발해질 것입니다.</p>
+                    
+                    <p>이러한 트렌드 속에서 스마트한 차량 구매/이용 전략을 세우는 것이 중요합니다. 첫째, **아이오닉 유지비**를 비롯한 총 소유 **비용**(TCO, Total Cost of Ownership)을 종합적으로 고려해야 합니다. 초기 구매 **가격**뿐만 아니라, 충전비(유류비), 세금, 보험료, 소모품 교체 **비용**, 감가상각 등을 모두 포함하여 계산해야 합니다. **AI**는 이러한 TCO를 정확하게 계산하고 비교해 줍니다. 둘째, **AI** 기반의 비교 견적 플랫폼을 적극 활용해야 합니다. **ChatGPT**와 같은 **AI**를 통해 여러 <strong>업체</strong>의 **견적**을 실시간으로 비교하고, 숨겨진 **혜택**이나 **프로모션**을 놓치지 않아야 합니다. 셋째, 계약 조건의 사각지대를 꼼꼼히 확인해야 합니다. **계약 기간** 만료 시 차량 반납 조건, 주행 거리 초과 시 위약금, 사고 발생 시 처리 절차 등은 반드시 명확히 인지해야 합니다. **네이버**, **구글**, **트위터**, **인스타그램** 등 다양한 채널에서 **업체** 및 서비스에 대한 **후기**를 찾아보는 것도 중요합니다. **볼보 C40 Recharge**, **폴스타 2**, **아우디 Q4 e-tron**과 같은 수입 **전기차**에 대한 **장기렌트**나 **리스** 상품도 꾸준히 출시되고 있으니 함께 비교해 보세요. **DISD** (혹은 디시)와 같은 커뮤니티에서도 **신규 가입 혜택**이나 **사은품**에 대한 정보가 공유되기도 합니다. **제미나이**는 이러한 정보들을 종합하여 사용자에게 최적의 솔루션을 제안할 수 있습니다.</p>
+
+                    <p><strong>2026년</strong>, **자동차리스** 및 **장기렌트카** 시장은 더욱 다변화될 것입니다. **현대 포터 2 일렉트릭**, **기아 봉고 EV**와 같은 상용차 **전기차**의 **리스/렌트** 수요도 증가할 것입니다. **AI**는 이러한 복잡한 시장에서 소비자가 길을 잃지 않도록 나침반 역할을 할 것입니다. **함께 많이 찾는** 카테고리에는 '**전기차 장기렌트**', '**아이오닉 5 가격**', '**자동차리스 비교**', '**장기렌트카 현금지원**', '**프로모션** 좋은 곳', '**월 20만원대 장기렌트**' 등이 포함되어 있습니다. **2026년**에는 **AI** 기술이 더욱 발전하여, **챗봇**을 통한 실시간 상담 및 계약 진행이 가능해질 것으로 예상됩니다. **싸고 좋은 차**, **가성비** 넘치는 **차량**을 찾는 여정에 저희가 함께 하겠습니다. **내돈내산 후기**를 기반으로 한 신뢰도 높은 정보 제공을 약속드립니다.</p>
+
+                    <p>마지막으로, **자동차리스**와 **장기렌트카** 이용 시에는 계약 조건 외에도 차량의 **유지비**를 고려하는 것이 중요합니다. **아이오닉**과 같은 **전기차**는 유류비/충전비, 세금, 보험료, 소모품 교체 **비용** 등을 종합적으로 고려했을 때 내연기관차 대비 경제적인 이점이 큽니다. **2026년**에는 **전기차** 충전 인프라가 더욱 확충되고, **AI** 기반의 스마트 충전 솔루션이 보편화되면서 **아이오닉 유지비** 절감 효과는 더욱 커질 것입니다. **AI**는 개인의 주행 패턴, 거주 지역의 충전 환경 등을 분석하여 최적의 **유지비** 관리 방안을 제시할 것입니다.</p>
+                </div>
+            </section>
+
+            <section id="faq">
+                <h2>❓ <strong>자동차리스/장기렌트카</strong> 자주 묻는 질문 (FAQ)</h2>
+                <dl class="faq-dl">
+                    <dt tabindex="0" aria-expanded="false">Q. <strong>아이오닉</strong> 등 <strong>전기차</strong> <strong>유지비</strong>는 정말 내연기관차보다 낮은가요? <strong>2026년</strong>에도 동일한가요?</dt>
+                    <dd>A. 네, 일반적으로 그렇습니다. **아이오닉**의 경우, 충전 비용이 유류비보다 훨씬 저렴하며, 개별소비세, 취득세 감면 및 공영주차장 할인 등 다양한 <strong>혜택</strong>이 있습니다. 또한, 엔진 오일 교환 등이 필요 없어 관리 <strong>비용</strong>도 절감됩니다. **2026년**에도 정부의 친환경차 정책 기조에 따라 이러한 <strong>혜택</strong>은 유지되거나 확대될 것으로 예상됩니다. **AI**는 최신 정책 변화를 실시간으로 반영하여 정확한 <strong>유지비</strong> 정보를 제공합니다.</dd>
+                    
+                    <dt tabindex="0" aria-expanded="false">Q. <strong>자동차리스</strong>와 <strong>장기렌트카</strong> 중 어떤 것이 <strong>세금 혜택</strong>이 더 큰가요? <strong>법인</strong>에게 유리한 것은?</dt>
+                    <dd>A. **법인**의 경우, 두 방식 모두 경비 처리 및 <strong>세금 혜택</strong>이 가능합니다. **자동차리스**는 법인 차량으로 등록되어 <strong>재산세</strong>에 합산되지 않는다는 장점이 있습니다. **장기렌트카**는 렌트료 전액을 비용 처리할 수 있으며, 일반적으로 보험료와 자동차세가 포함되어 있어 관리가 용이합니다. 개인의 경우, **자동차리스**가 **재산세**에 영향을 주지 않아 유리할 수 있으며, **장기렌트카**는 보험료, 세금 등이 포함되어 총 **비용** 예측이 쉽다는 장점이 있습니다. **AI** 분석을 통해 개인/법인별 최적의 **혜택**을 찾아드릴 수 있습니다. **2026년** 세법 개정 동향도 함께 고려하여 안내해 드립니다.</dd>
+                    
+                    <dt tabindex="0" aria-expanded="false">Q. <strong>계약 기간</strong> 만료 시 차량 반납/인수 조건은 어떻게 되나요? <strong>위약금</strong>은?</dt>
+                    <dd>A. **장기렌트카**의 경우, 일반적으로 약정된 <strong>주행 거리</strong> 내에서 차량을 반납하며, 만약 초과 시에는 추가 **비용**이 발생합니다. **자동차리스**는 만기 시 잔존가치에 따라 차량을 인수하거나 반납하는 옵션이 있습니다. 두 방식 모두 <strong>계약 기간</strong> 및 <strong>주행 거리</strong> 조건을 사전에 명확히 확인하는 것이 중요합니다. **AI**는 다양한 시나리오별 **비용**을 계산하여 <strong>위약금</strong> 발생 가능성까지 시뮬레이션해 드립니다. **YouTube** 등에서 계약 만료 관련 **후기**를 참고하는 것도 좋습니다.</dd>
+
+                    <dt tabindex="0" aria-expanded="false">Q. <strong>장기렌트카</strong> 이용 중 사고가 나면 어떻게 되나요? <strong>자차 보험</strong> 처리는?</dt>
+                    <dd>A. **장기렌트카**는 렌터카 회사 명의로 보험이 가입되어 있어, 사고 발생 시 **업체**에 즉시 알리면 됩니다. 보통 월 렌트료에 포함된 보험으로 처리되며, 면책금만 부담하면 됩니다. **자차 보험**의 범위 및 면책금 금액은 계약 시 확인해야 합니다. **내돈내산 후기**를 보면 사고 처리 경험을 공유하는 경우가 많습니다. **AI**는 사고 처리 절차 및 보험 관련 문의에 대한 안내를 제공할 수 있습니다.</dd>
+
+                    <dt tabindex="0" aria-expanded="false">Q. <strong>아이오닉 5</strong> **리스**와 **장기렌트카** 중 <strong>저렴한곳</strong>을 찾는 방법은?</dt>
+                    <dd>A. 여러 <strong>전문 업체</strong>의 **견적**을 **비교**하는 것이 가장 중요합니다. 저희 플랫폼은 **AI**를 활용하여 실시간 **할인** 및 **프로모션** 정보를 바탕으로 **아이오닉 5**에 대한 **최저가 견적**을 찾아드립니다. **이벤트**, **현금지원**, **사은품**, **상품권** 등 추가 <strong>혜택</strong>까지 종합적으로 고려하여 **싸고 좋은 차**를 찾을 수 있도록 돕겠습니다. **2026년** 최신 **견적** 비교를 통해 가장 합리적인 선택을 하세요.</dd>
+
+                    <dt tabindex="0" aria-expanded="false">Q. <strong>2026년</strong> 최신 <strong>아이오닉 유지비</strong> 정보는 어디서 얻을 수 있나요?</dt>
+                    <dd>A. 저희 플랫폼은 **AI**를 통해 국세청, 산업통상자원부 등 공신력 있는 기관의 데이터와 실제 사용자들의 **내돈내산 후기**를 종합하여 <strong>2026년</strong> 최신 <strong>아이오닉 유지비</strong> 정보를 제공합니다. **Gemini**, **ChatGPT** 기반 분석을 통해 충전 **비용**, 세금, 보험료, 소모품 교체 **비용** 등을 상세히 안내해 드립니다.</dd>
+                </dl>
+            </section>
+
+            <hr>
+
+            <section id="contact">
+                <h2>📞 <strong>AI 스마트 카</strong> 비교 견적 고객 센터</h2>
+                <p>**아이오닉 유지비**, **자동차리스**, **장기렌트카** 관련 모든 문의, **견적** 상담, **차종별 비교** 요청, **2026년** 트렌드 정보 등 궁금한 점은 언제든지 아래 연락처를 이용해 주세요.</p>
+                <ul>
+                    <li><strong>전화 상담:</strong> 1677-XXXX (평일 09:00 ~ 18:00, 주말/공휴일 휴무)</li>
+                    <li><strong>이메일 문의:</strong> support@smartcarcompare.com</li>
+                    <li><strong>AI 챗봇 상담:</strong> 페이지 하단 'AI 상담' 버튼 클릭 (24시간)</li>
+                </ul>
+                 <form action="/quick-contact" method="POST">
+                    <div class="form-group">
+                        <label for="quick-name">성함</label>
+                        <input type="text" id="quick-name" name="quick-name" placeholder="예: 홍길동" required aria-label="문의자 성함">
+                    </div>
+                     <div class="form-group">
+                        <label for="quick-tel">연락처</label>
+                        <input type="tel" id="quick-tel" name="quick-tel" placeholder="010-xxxx-xxxx" required aria-label="문의자 연락처">
+                    </div>
+                    <div class="form-group">
+                        <label for="quick-question">문의 내용</label>
+                        <textarea id="quick-question" name="quick-question" placeholder="예: 아이오닉 6 장기렌트 견적 문의합니다. / 2026년 법인 리스 혜택 궁금합니다. / Gemini AI 기반 차량 추천 요청" required aria-label="간단 문의 내용 입력"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" aria-label="간단 문의 제출">간단 문의 접수</button>
+                </form>
+            </section>
+            
+            <section id="related-keywords">
+                <h2>함께 많이 찾는 키워드 및 카테고리</h2>
+                <div class="keyword-tags" aria-label="연관 키워드">
+                    <a href="#">아이오닉 5 유지비</a>
+                    <a href="#">아이오닉 6 장기렌트</a>
+                    <a href="#">전기차 리스 프로모션</a>
+                    <a href="#">자동차리스 비교</a>
+                    <a href="#">장기렌트카 현금지원</a>
+                    <a href="#">2026년 자동차 트렌드</a>
+                    <a href="#">아이오닉 5 가격</a>
+                    <a href="#">아이오닉 6 가격</a>
+                    <a href="#">BMW i4 리스</a>
+                    <a href="#">테슬라 모델 3 장기렌트</a>
+                    <a href="#">제네시스 GV60 견적</a>
+                    <a href="#">월 20만원대 장기렌트</a>
+                    <a href="#">아이오닉 유지비 절약</a>
+                    <a href="#">친환경차 혜택</a>
+                    <a href="#">AI 자동차 추천</a>
+                    <a href="#">법인차 리스</a>
+                    <a href="#">개인사업자 장기렌트</a>
+                    <a href="#">아이오닉 7 예상</a>
+                    <a href="#">전기차 세금 혜택</a>
+                    <a href="#">수입차 장기렌트</a>
+                </div>
+                 <div class="related-links" aria-label="함께 많이 찾는 카테고리">
+                    <a href="#">스마트카 비교 견적</a>
+                    <a href="#">전기차 구매 가이드</a>
+                    <a href="#">차량 관리 및 유지보수</a>
+                    <a href="#">자동차 금융 상품</a>
+                    <a href="#">최신 자동차 뉴스</a>
+                    <a href="#">AI 기반 차량 추천</a>
+                </div>
+            </section>
+
+        </div>
     </main>
-  </body>
-</html>
+
+    <!-- AI Chatbot Integration Placeholder -->
+    <div id="ai-chatbot-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+        <button id="ai-chat-toggle" class="cta-button" style="background-color: var(--accent-color); font-size: 1.1em; padding: 12px 25px;">
+            AI 상담 (Gemini)
+        </button>
+        <div id="ai-chat-window" style="display: none; width: 350px; height: 500px; background-color: white; border-radius: 15px; box-shadow: var(--shadow); position: absolute; bottom: 60px; right: 0; flex-direction: column; overflow: hidden;">
+            <div style="background: var(--gradient-header); color: white; padding: 15px; border-top-left-radius: 15px; border-top-right-radius: 15px; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: bold;">Gemini AI 챗봇</span>
+                <button onclick="document.getElementById('ai-chat-window').style.display='none'; document.getElementById('ai-chat-toggle').style.display='block';" style="background: none; border: none; color: white; font-size: 1.2em; cursor: pointer;">&times;</button>
+            </div>
+            <div style="flex-grow: 1; overflow-y: auto; padding: 15px; background-color: #f4f6f8;">
+                <p style="font-style: italic; color: #777;">안녕하세요! Gemini AI 챗봇입니다. 무엇을 도와드릴까요? (예: 아이오닉 5 유지비, 장기렌트 견적 문의)</p>
+                <!-- Chat messages will appear here -->
+            </div>
+            <div style="display: flex; padding: 15px; border-top: 1px solid var(--border-color);">
+                <input type="text" id="ai-chat-input" placeholder="메시지를 입력하세요..." style="flex-grow: 1; padding: 10px; border: 1px solid var(--border-color); border-radius: 8px; margin-right: 10px;">
+                <button onclick="sendAiMessage()" style="padding: 10px 15px; border: none; background-color: var(--secondary-color); color: white; border-radius: 8px; cursor: pointer;">전송</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // FAQ 아코디언 기능 (접기/펼치기)
+        document.querySelectorAll('.faq-dl dt').forEach((dt) => {
+            dt.addEventListener('click', () => {
+                const isActive = dt.classList.contains('active');
+                
+                // Close other active questions first
+                document.querySelectorAll('.faq-dl dt').forEach(otherDt => {
+                    if (otherDt !== dt) { // Only close others
+                        otherDt.classList.remove('active');
+                        otherDt.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                // Toggle current question
+                if (!isActive) {
+                    dt.classList.add('active');
+                    dt.setAttribute('aria-expanded', 'true');
+                } else {
+                    dt.classList.remove('active');
+                    dt.setAttribute('aria-expanded', 'false');
+                }
+            });
+            
+            // Keyboard accessibility for FAQ
+            dt.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    dt.click();
+                }
+            });
+        });
+
+        // Function to update regional info box (called from onchange event)
+        function updateRegionalInfo(region) {
+            const infoBox = document.getElementById('regional-info-box');
+            let infoText = '';
+            let regionalHighlight = '';
+
+            switch(region) {
+                case '서울':
+                    regionalHighlight = '<strong>서울 (강남, 서초, 송파)</strong>';
+                    infoText = '<strong>자동차리스</strong> 및 <strong>장기렌트카</strong> 시장 경쟁이 가장 치열하며, **아이오닉** 등 **전기차**에 대한 **할인** 및 **이벤트**가 풍부합니다. **AI 기반** 상담이 활발한 지역입니다. **월 평균 비용**은 전국 평균 대비 약간 높을 수 있습니다. **신규 가입 혜택**도 주목할 만합니다.';
+                    break;
+                case '경기':
+                    regionalHighlight = '<strong>경기 (수원, 성남, 용인)</strong>';
+                    infoText = '수도권 인접 지역으로 신도시 중심의 **장기렌트카** 수요가 높습니다. **현대, 기아** 등 국산차 **견적** 비교가 용이하며, **아이오닉 유지비** 절감 팁이 인기입니다. **저렴한곳**을 찾기 위한 **AI** 분석이 활발합니다.';
+                    break;
+                case '부산':
+                    regionalHighlight = '<strong>부산 (해운대, 연제)</strong>';
+                    infoText = '항만 물류 관련 **상용차 리스** 및 **SUV 장기렌트** 수요가 높습니다. **아이오닉 5** 등 **전기차**에 대한 관심도 증가 추세이며, **부산** 지역 **할인** 정보를 잘 찾아보는 것이 중요합니다. **YouTube 후기**도 참고하세요.';
+                    break;
+                case '인천':
+                    regionalHighlight = '<strong>인천 (연수, 송도)</strong>';
+                    infoText = '신축 아파트 및 국제도시 중심으로 **패밀리카** 및 **전기차 리스** 문의가 많습니다. **장기렌트카** **프로모션**과 함께 **저렴한곳**을 찾기 용이합니다. **AI**는 **인천** 지역 특화 **혜택**을 찾아줍니다.';
+                    break;
+                case '대구':
+                    regionalHighlight = '<strong>대구 (수성, 달서)</strong>';
+                    infoText = '<strong>내돈내산 후기</strong>가 활발한 지역 중 하나이며, 중형 세단 및 SUV **장기렌트카** 수요가 꾸준합니다. **아이오닉** 등 **전기차** 관련 **견적**도 많이 문의되고 있습니다. **가격 비교**에 유리합니다.';
+                    break;
+                case '광주':
+                    regionalHighlight = '<strong>광주 (서구, 북구)</strong>';
+                    infoText = '지역 경제 활성화에 따라 **법인 차량 리스** 및 **개인 장기렌트카** 수요가 증가하고 있습니다. **기아** 등 지역 기반 브랜드와의 연계 프로모션이 있을 수 있습니다. **AI**는 **광주** 맞춤 **이벤트** 정보를 제공합니다.';
+                    break;
+                case '대전':
+                    regionalHighlight = '<strong>대전 (서구, 유성)</strong>';
+                    infoText = '연구 단지 및 과학 단지가 많아 **첨단 기술** 관련 **전기차** 및 **친환경차** **리스/렌트** 문의가 많습니다. **아이오닉 6**와 같은 모델의 **유지비** 절감 효과가 강조됩니다. **AI**는 기술 동향 기반 **추천**을 제공합니다.';
+                    break;
+                case '울산':
+                    regionalHighlight = '<strong>울산 (남구, 북구)</strong>';
+                    infoText = '산업 단지가 발달하여 **상용차 리스** 및 **SUV 장기렌트** 수요가 높습니다. **전기차** 전환 흐름에 따라 **아이오닉** 등 **전기차** 모델의 **견적** 문의도 증가하고 있습니다. **울산** 지역 **업체** 정보와 **할인**을 비교 제공합니다.';
+                    break;
+                default: // 전국
+                    regionalHighlight = '<strong>전국</strong>';
+                    infoText = '지역에 구애받지 않고 최적의 **자동차리스** 및 **장기렌트카** **견적**을 비교해 드립니다. **AI** 분석을 통해 맞춤형 **혜택** 정보를 제공하며, <strong>2026년</strong> 최신 **트렌드**를 반영합니다.';
+            }
+            infoBox.innerHTML = `<strong>${regionalHighlight} 지역 정보:</strong> ${infoText}`;
+        }
+
+        // AI Chatbot Toggle
+        document.getElementById('ai-chat-toggle').addEventListener('click', () => {
+            document.getElementById('ai-chat-window').style.display = 'flex'; // Use flex to properly display child elements
+            document.getElementById('ai-chat-toggle').style.display = 'none';
+        });
+
+        // Simulate sending a message to AI
+        function sendAiMessage() {
+            const input = document.getElementById('ai-chat-input');
+            const message = input.value.trim();
+            if (!message) return;
+
+            // Display user message
+            const chatWindow = document.querySelector('#ai-chat-window div[style*="overflow-y: auto"]');
+            const userMessage = document.createElement('div');
+            userMessage.style.textAlign = 'right';
+            userMessage.style.marginBottom = '10px';
+            userMessage.innerHTML = `<span style="background-color: ${getComputedStyle(document.documentElement).getPropertyValue('--primary-color')}; color: white; padding: 8px 12px; border-radius: 8px; display: inline-block;">${message}</span>`;
+            chatWindow.appendChild(userMessage);
+
+            // Simulate AI response (replace with actual API call if implemented)
+            const aiResponse = document.createElement('div');
+            aiResponse.style.textAlign = 'left';
+            aiResponse.style.marginBottom = '10px';
+            aiResponse.innerHTML = `<span style="background-color: #eee; color: #333; padding: 8px 12px; border-radius: 8px; display: inline-block; border: 1px solid #ddd;"><strong>Gemini AI:</strong> 잠시만 기다려주세요. 분석 중입니다...</span>`;
+            chatWindow.appendChild(aiResponse);
+
+            // Scroll to bottom
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+
+            // Clear input
+            input.value = '';
+
+            // Simulate AI processing delay
+            setTimeout(() => {
+                // Replace with actual AI logic based on message content
+                let aiReplyText = "분석 결과를 바탕으로 관련 정보를 찾아보겠습니다. 아이오닉 유지비, 자동차리스, 장기렌트카 등 구체적인 질문을 해주시면 더 정확한 답변을 드릴 수 있습니다. 예를 들어 '아이오닉 5 월 유지비' 또는 '2026년 BMW i4 리스 프로모션'과 같이 질문해주세요.";
+                if (message.toLowerCase().includes('아이오닉 5 유지비')) {
+                    aiReplyText = "아이오닉 5의 월 평균 유지비는 충전 비용, 보험료, 자동차세 등을 포함하여 약 10만원 내외로 예상됩니다. 자세한 내용은 '아이오닉 유지비' 섹션을 참고해 주세요.";
+                } else if (message.toLowerCase().includes('리스 견적')) {
+                    aiReplyText = "자동차리스 견적은 차량 모델, 계약 기간, 주행 거리, 초기 납입금 등에 따라 달라집니다. '맞춤 견적 요청' 섹션에서 상세 정보를 입력해 주시면 최대 5곳의 업체로부터 최저가 견적을 비교해 드릴 수 있습니다.";
+                }
+                
+                aiResponse.querySelector('span').innerHTML = `<strong>Gemini AI:</strong> ${aiReplyText}`;
+                chatWindow.scrollTop = chatWindow.scrollHeight; // Scroll again after AI reply
+            }, 1500);
+        }
+
+        // Allow Enter key to send message
+        document.getElementById('ai-chat-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendAiMessage();
+            }
+        });
+    </script>
+    
+
+  
