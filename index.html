@@ -1325,27 +1325,8 @@
         </div>
     </main>
 
-    <!-- AI Chatbot Integration Placeholder -->
-    <div id="ai-chatbot-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
-        <button id="ai-chat-toggle" class="cta-button" style="background-color: var(--accent-color); font-size: 1.1em; padding: 12px 25px;">
-            AI 상담 (Gemini)
-        </button>
-        <div id="ai-chat-window" style="display: none; width: 350px; height: 500px; background-color: white; border-radius: 15px; box-shadow: var(--shadow); position: absolute; bottom: 60px; right: 0; flex-direction: column; overflow: hidden;">
-            <div style="background: var(--gradient-header); color: white; padding: 15px; border-top-left-radius: 15px; border-top-right-radius: 15px; display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-weight: bold;">Gemini AI 챗봇</span>
-                <button onclick="document.getElementById('ai-chat-window').style.display='none'; document.getElementById('ai-chat-toggle').style.display='block';" style="background: none; border: none; color: white; font-size: 1.2em; cursor: pointer;">&times;</button>
-            </div>
-            <div style="flex-grow: 1; overflow-y: auto; padding: 15px; background-color: #f4f6f8;">
-                <p style="font-style: italic; color: #777;">안녕하세요! Gemini AI 챗봇입니다. 무엇을 도와드릴까요? (예: 아이오닉 5 유지비, 장기렌트 견적 문의)</p>
-                <!-- Chat messages will appear here -->
-            </div>
-            <div style="display: flex; padding: 15px; border-top: 1px solid var(--border-color);">
-                <input type="text" id="ai-chat-input" placeholder="메시지를 입력하세요..." style="flex-grow: 1; padding: 10px; border: 1px solid var(--border-color); border-radius: 8px; margin-right: 10px;">
-                <button onclick="sendAiMessage()" style="padding: 10px 15px; border: none; background-color: var(--secondary-color); color: white; border-radius: 8px; cursor: pointer;">전송</button>
-            </div>
-        </div>
-    </div>
-
+  
+	
     <script>
         // FAQ 아코디언 기능 (접기/펼치기)
         document.querySelectorAll('.faq-dl dt').forEach((dt) => {
